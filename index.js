@@ -20,14 +20,25 @@ function click2(e) {
   
 document.addEventListener('DOMContentLoaded', function () {
   var td = document.querySelectorAll('td');
-  for (var i = 0; i < 2; i++) {
-    td[i].addEventListener('click', click);
-  }
-  for (var i = 2; i < 4; i++) {
-    td[i].addEventListener('click', click1);
-  }
-  for (var i = 4; i < 6; i++) {
-    td[i].addEventListener('click', click2);
+  // for (var i = 0; i < 2; i++) {
+  //   td[i].addEventListener('click', click);
+  // }
+  // for (var i = 2; i < 4; i++) {
+  //   td[i].addEventListener('click', click1);
+  // }
+  // for (var i = 4; i < 6; i++) {
+  //   td[i].addEventListener('click', click2);
+  // }
+  for (var i = 0; i < 9; i++) {
+    if(i % 3 == 0){
+      td[i].addEventListener('click', click);
+    }
+    if(i % 3 == 1){
+      td[i].addEventListener('click', click1);
+    }
+    if(i % 3 == 2){
+      td[i].addEventListener('click', click2);
+    }
   }
 });
   
