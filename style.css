@@ -1,4 +1,4 @@
-#columns {
+.style1 {
     background: linear-gradient(#0B486B, #F56217) !important;
 }
 
@@ -12,4 +12,5 @@
 
 .ytd-guide-renderer {
     background: linear-gradient(#96deda, #50c9c3) !important;
+    color: #000000;
 }

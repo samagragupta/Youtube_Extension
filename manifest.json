@@ -1,13 +1,14 @@
 {
-    "manifest_version": 2,
-   
-    "name": "Youtube Theme",
-    "version": "0.1.0",
-    "description": "Lateral blog post demo extension",
-   
-    "content_scripts": [{
-      "css": ["style.css"],
-      "matches": ["https://www.youtube.com/*"]
-    }]
-   
-  }
+  "name": "Youtube Theme",
+  "description": "Change the current page color",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+      "default_title": "Set this page's color.",
+      "default_popup": "index.html"
+  },
+  "manifest_version": 2
+}
