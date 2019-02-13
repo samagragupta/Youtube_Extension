@@ -23,6 +23,18 @@ function color(e) {
       {code:"document.getElementById('masthead').style.backgroundColor='" + e.target.value + "'"});
       console.log(e.target.id);
 }
+function color1(e) {
+  chrome.tabs.executeScript(null,
+      // {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
+      {code:"document.getElementById('secondary').style.backgroundColor='" + e.target.value + "'"});
+      console.log(e.target.id);
+}
+function color2(e) {
+  chrome.tabs.executeScript(null,
+      // {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
+      {code:"document.getElementById('columns').style.backgroundColor='" + e.target.value + "'"});
+      console.log(e.target.id);
+}
   
 document.addEventListener('DOMContentLoaded', function () {
   var td = document.querySelectorAll('td');
@@ -38,10 +50,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  var inp = document.querySelectorAll('input');
-  for (var j = 0 ; j < inp.length ; j++){
-    inp[j].addEventListener('input', color);
+var inp = document.querySelectorAll('input');
+  for (var i = 0 ; i < inp.length ; i++){
+    if(i % 3 == 0){
+      inp[i].addEventListener('input', color);
+    }
+    if(i % 3 == 1){
+      inp[i].addEventListener('input', color1);
+    }
+    if(i % 3 == 2){
+      inp[i].addEventListener('input', color2);
+    }
   }
-
 });
   
