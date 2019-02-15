@@ -1,22 +1,3 @@
-function click(e) {
-  chrome.tabs.executeScript(null,
-      // {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
-      {code:"document.getElementById('secondary').style.backgroundColor='" + e.target.id + "'"});
-      console.log(e.target.id);
-}
-
-function click1(e) {
-  chrome.tabs.executeScript(null,
-      // {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
-      {code:"document.getElementById('columns').style.backgroundColor='" + e.target.id + "'"});
-      console.log(e.target.id);
-}
-function click2(e) {
-  chrome.tabs.executeScript(null,
-      // {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
-      {code:"document.getElementById('masthead').style.backgroundColor='" + e.target.id + "'"});
-      console.log(e.target.id);
-}
 function color(e) {
   chrome.tabs.executeScript(null,
       // {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
@@ -35,31 +16,45 @@ function color2(e) {
       {code:"document.getElementById('columns').style.backgroundColor='" + e.target.value + "'"});
       console.log(e.target.id);
 }
+function color3(e) {
+  chrome.tabs.executeScript(null,
+      // {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
+      {code:"document.getElementById('primary').style.backgroundColor='" + e.target.value + "'"});
+      console.log(e.target.id);
+}
+function color4(e) {
+  chrome.tabs.executeScript(null,
+      // {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
+      {code:"document.getElementById('page-manager').style.backgroundColor='" + e.target.value + "'"});
+      console.log(e.target.id);
+}
+function color5(e) {
+  chrome.tabs.executeScript(null,
+      // {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
+      {code:"document.getElementById('guide-inner-content').style.backgroundColor='" + e.target.value + "'"});
+      console.log(e.target.id);
+}
   
 document.addEventListener('DOMContentLoaded', function () {
-  var td = document.querySelectorAll('td');
-  for (var i = 0; i < 9; i++) {
-    if(i % 3 == 0){
-      td[i].addEventListener('click', click);
-    }
-    if(i % 3 == 1){
-      td[i].addEventListener('click', click1);
-    }
-    if(i % 3 == 2){
-      td[i].addEventListener('click', click2);
-    }
-  }
-
-var inp = document.querySelectorAll('input');
+  var inp = document.querySelectorAll('input');
   for (var i = 0 ; i < inp.length ; i++){
-    if(i % 3 == 0){
+    if(i % 6 == 0){
       inp[i].addEventListener('input', color);
     }
-    if(i % 3 == 1){
+    if(i % 6 == 1){
       inp[i].addEventListener('input', color1);
     }
-    if(i % 3 == 2){
+    if(i % 6 == 2){
       inp[i].addEventListener('input', color2);
+    }
+    if(i % 6 == 3){
+      inp[i].addEventListener('input', color3);
+    }
+    if(i % 6 == 4){
+      inp[i].addEventListener('input', color4);
+    }
+    if(i % 6 == 5){
+      inp[i].addEventListener('input', color5);
     }
   }
 });
