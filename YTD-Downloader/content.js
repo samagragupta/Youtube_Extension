@@ -4,51 +4,17 @@ document.documentElement.style.width = '100%';
 document.body.style.width = '100%';
 
 var div = document.createElement( 'div' );
-var btnForm = document.createElement( 'form' );
-var btn = document.createElement( 'input' );
+var btnForm = document.createElement( 'button' );
 
 setTimeout(function(){
 	alert('after 5 seconds');
-    document.getElementById('related').appendChild( div );
+    document.getElementById('related').prepend( div );
     div.appendChild( btnForm );
-    btnForm.appendChild( btn );
-    //set attributes for div
     div.id = 'myDivId';
-    div.style.position = 'fixed';
+    btnForm.innerHTML = 'Download';
     div.style.top = '69.5%';
     div.style.left = '40%';
-    div.style.width = '100%';   
-    div.style.height = '100%';
+    div.style.width = '10%';   
+    div.style.height = '7%';
     div.style.backgroundColor = 'blue';
 },5000); 
-
-
-
-
-
-
-
-//append all elements
-document.getElementById('related').appendChild( div );
-div.appendChild( btnForm );
-btnForm.appendChild( btn );
-//set attributes for div
-div.id = 'myDivId';
-div.style.position = 'fixed';
-div.style.top = '69.5%';
-div.style.left = '40%';
-div.style.width = '100%';   
-div.style.height = '100%';
-div.style.backgroundColor = 'blue';
-
-//set attributes for btnForm
-btnForm.action = '';
-
-//set attributes for btn
-btn.removeAttribute( 'style' );
-btn.type = 'button';
-btn.value = 'hello';
-btn.style.position = 'absolute';
-btn.style.top = '69.5%';
-btn.style.left = '40%';
-btn.style.backgroundColor = 'red';
